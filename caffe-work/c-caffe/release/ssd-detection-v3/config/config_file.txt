@@ -1,0 +1,2 @@
+/root/ssc/work-dir/c-caffe/release/ssd-detection-v2/config/config_object_ssd.xml
+/root/ssc/work-dir/c-caffe/release/ssd-detection-v2/data/test.mp4

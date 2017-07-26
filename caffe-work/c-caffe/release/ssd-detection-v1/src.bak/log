@@ -1,0 +1,10 @@
+g++ -c body_detection.cpp -std=c++0x -O3 -Wall -I/usr/local/include -I/usr/include/atlas -I/usr/local/cuda/include -I/usr/local/include/opencv -I../../caffe_ssd/include
+body_detection.cpp: In member function ‘void SSD::getResults(const std::vector<caffe::Blob<float>*>&)’:
+body_detection.cpp:307:7: warning: unused variable ‘need_save’ [-Wunused-variable]
+  bool need_save = false;
+       ^
+body_detection.cpp:308:7: warning: unused variable ‘visualize’ [-Wunused-variable]
+  bool visualize = true;
+       ^
+g++ -c main.cpp -std=c++0x -O3 -Wall -I/usr/local/include -I/usr/include/atlas -I/usr/local/cuda/include -I/usr/local/include/opencv -I../../caffe_ssd/include
+g++ -o body_detection body_detection.o main.o -lprotobuf -lglog -lpthread -lboost_system -lboost_filesystem -lopencv_highgui -lopencv_core -lopencv_imgproc -lopencv_calib3d ../../caffe_ssd/build/lib/libcaffe.so -lrt -Wl,-rpath,/usr/local/lib:../../caffe_ssd/build/lib:/usr/local/cuda/lib

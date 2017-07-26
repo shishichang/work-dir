@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<opencv_storage>
+<model><caffemodel>"../models/SSD_person.caffemodel"</caffemodel>
+  <labelfile>"../models/labelmap_voc.prototxt"</labelfile>
+  <prototxt>"../models/test_person.prototxt"</prototxt></model>
+</opencv_storage>

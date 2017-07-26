@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<opencv_storage>
+	<model>
+		<caffemodel>"../models/SSD_person.caffemodel"</caffemodel>
+		<prototxt>"../models/test_person.prototxt"</prototxt>
+	</model>
+
+	<output>
+		<resized_width>300</resized_width>
+		<resized_height>300</resized_height>
+		<location_output_layer_name>"mbox_loc"</location_output_layer_name>
+		<confidence_output_layer_name>"mbox_conf_flatten"</confidence_output_layer_name>
+		<priorbox_output_layer_name>"mbox_priorbox"</priorbox_output_layer_name>
+		<share_location>"true"</share_location>
+		<num_classes>2</num_classes>
+		<background_label_id>0</background_label_id>
+		<label_map_file>"../data/labelmap_person.prototxt"</label_map_file>
+		<code_type>"CENTER_SIZE"</code_type>
+		<confidence_threshold>0.5</confidence_threshold>
+	</output>
+
+	<nms>
+		<nms_threshold>0.45</nms_threshold>
+		<top_k>400</top_k>
+		<keep_top_k>200</keep_top_k>
+	</nms>
+
+	<visual>
+		<visualize>"true"</visualize>
+		<visualize_threshold>0.6</visualize_threshold>
+		<show_image_width>640</show_image_width>
+		<show_image_height>640</show_image_height>
+	</visual>
+
+	<save_result>
+		<need_save>"false"</need_save>
+		<save_format>"ILSVRC"</save_format>
+		<save_directory>"../result"</save_directory>
+	</save_result>
+ <!-- resumed -->
+</opencv_storage>

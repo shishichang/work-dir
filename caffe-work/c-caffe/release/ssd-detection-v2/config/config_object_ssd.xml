@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<opencv_storage>
+<model><caffemodel>"../models/VGG_VOC0712_SSD_300x300_iter_60000.caffemodel"</caffemodel>
+  <prototxt>"../models/test.prototxt"</prototxt></model>
+<output><resized_width>300</resized_width>
+  <resized_height>300</resized_height></output>
+</opencv_storage>
