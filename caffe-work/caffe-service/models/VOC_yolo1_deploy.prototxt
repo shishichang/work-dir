@@ -1,0 +1,520 @@
+name: "yolo"
+input: "data"
+input_dim: 1
+input_dim: 3
+input_dim: 448
+input_dim: 448
+layer{
+  name: "conv1"
+  type: "Convolution"
+  bottom: "data"
+  top: "conv1"
+  convolution_param{
+    num_output: 64
+    kernel_size: 7
+    stride: 2
+    pad: 3
+  }
+}
+layer{
+  name: "Leaky1"
+  type: "Leaky"
+  bottom: "conv1"
+  top: "Leaky1"
+}
+layer{
+  name: "pool1"
+  type: "Pooling"
+  bottom: "Leaky1"
+  top: "pool1"
+  pooling_param {
+    pool: MAX
+    kernel_size: 2
+    stride: 2
+  }
+}
+layer{
+  name: "conv2"
+  type: "Convolution"
+  bottom: "pool1"
+  top: "conv2"
+  convolution_param{
+    num_output: 192
+    kernel_size: 3
+    stride: 1
+    pad: 1
+  }
+}
+layer{
+  name: "Leaky2"
+  type: "Leaky"
+  bottom: "conv2"
+  top: "Leaky2"
+}
+layer{
+  name: "pool2"
+  type: "Pooling"
+  bottom: "Leaky2"
+  top: "pool2"
+  pooling_param {
+    pool: MAX
+    kernel_size: 2
+    stride: 2
+  }
+}
+layer{
+  name: "conv3"
+  type: "Convolution"
+  bottom: "pool2"
+  top: "conv3"
+  convolution_param{
+    num_output: 128
+    kernel_size: 1
+    stride: 1
+    pad: 0
+  }
+}
+layer{
+  name: "Leaky3"
+  type: "Leaky"
+  bottom: "conv3"
+  top: "Leaky3"
+}
+layer{
+  name: "conv4"
+  type: "Convolution"
+  bottom: "Leaky3"
+  top: "conv4"
+  convolution_param{
+    num_output: 256
+    kernel_size: 3
+    stride: 1
+    pad: 1
+  }
+}
+layer{
+  name: "Leaky4"
+  type: "Leaky"
+  bottom: "conv4"
+  top: "Leaky4"
+}
+layer{
+  name: "conv5"
+  type: "Convolution"
+  bottom: "Leaky4"
+  top: "conv5"
+  convolution_param{
+    num_output: 256
+    kernel_size: 1
+    stride: 1
+    pad: 0
+  }
+}
+layer{
+  name: "Leaky5"
+  type: "Leaky"
+  bottom: "conv5"
+  top: "Leaky5"
+}
+layer{
+  name: "conv6"
+  type: "Convolution"
+  bottom: "Leaky5"
+  top: "conv6"
+  convolution_param{
+    num_output: 512
+    kernel_size: 3
+    stride: 1
+    pad: 1
+  }
+}
+layer{
+  name: "Leaky6"
+  type: "Leaky"
+  bottom: "conv6"
+  top: "Leaky6"
+}
+layer{
+  name: "pool3"
+  type: "Pooling"
+  bottom: "Leaky6"
+  top: "pool3"
+  pooling_param {
+    pool: MAX
+    kernel_size: 2
+    stride: 2
+  }
+}
+layer{
+  name: "conv7"
+  type: "Convolution"
+  bottom: "pool3"
+  top: "conv7"
+  convolution_param{
+    num_output: 256
+    kernel_size: 1
+    stride: 1
+    pad: 0
+  }
+}
+layer{
+  name: "Leaky7"
+  type: "Leaky"
+  bottom: "conv7"
+  top: "Leaky7"
+}
+layer{
+  name: "conv8"
+  type: "Convolution"
+  bottom: "Leaky7"
+  top: "conv8"
+  convolution_param{
+    num_output: 512
+    kernel_size: 3
+    stride: 1
+    pad: 1
+  }
+}
+layer{
+  name: "Leaky8"
+  type: "Leaky"
+  bottom: "conv8"
+  top: "Leaky8"
+}
+layer{
+  name: "conv9"
+  type: "Convolution"
+  bottom: "Leaky8"
+  top: "conv9"
+  convolution_param{
+    num_output: 256
+    kernel_size: 1
+    stride: 1
+    pad: 0
+  }
+}
+layer{
+  name: "Leaky9"
+  type: "Leaky"
+  bottom: "conv9"
+  top: "Leaky9"
+}
+layer{
+  name: "conv10"
+  type: "Convolution"
+  bottom: "Leaky9"
+  top: "conv10"
+  convolution_param{
+    num_output: 512
+    kernel_size: 3
+    stride: 1
+    pad: 1
+  }
+}
+layer{
+  name: "Leaky10"
+  type: "Leaky"
+  bottom: "conv10"
+  top: "Leaky10"
+}
+layer{
+  name: "conv11"
+  type: "Convolution"
+  bottom: "Leaky10"
+  top: "conv11"
+  convolution_param{
+    num_output: 256
+    kernel_size: 1
+    stride: 1
+    pad: 0
+  }
+}
+layer{
+  name: "Leaky11"
+  type: "Leaky"
+  bottom: "conv11"
+  top: "Leaky11"
+}
+layer{
+  name: "conv12"
+  type: "Convolution"
+  bottom: "Leaky11"
+  top: "conv12"
+  convolution_param{
+    num_output:512
+    kernel_size: 3
+    stride: 1
+    pad: 1
+  }
+}
+layer{
+  name: "Leaky12"
+  type: "Leaky"
+  bottom: "conv12"
+  top: "Leaky12"
+}
+layer{
+  name: "conv13"
+  type: "Convolution"
+  bottom: "Leaky12"
+  top: "conv13"
+  convolution_param{
+    num_output: 256
+    kernel_size: 1
+    stride: 1
+    pad: 0
+  }
+}
+layer{
+  name: "Leaky13"
+  type: "Leaky"
+  bottom: "conv13"
+  top: "Leaky13"
+}
+layer{
+  name: "conv14"
+  type: "Convolution"
+  bottom: "Leaky13"
+  top: "conv14"
+  convolution_param{
+    num_output: 512
+    kernel_size: 3
+    stride: 1
+    pad: 1
+  }
+}
+layer{
+  name: "Leaky14"
+  type: "Leaky"
+  bottom: "conv14"
+  top: "Leaky14"
+}
+layer{
+  name: "conv15"
+  type: "Convolution"
+  bottom: "Leaky14"
+  top: "conv15"
+  convolution_param{
+    num_output: 512
+    kernel_size: 1
+    stride: 1
+    pad: 0
+  }
+}
+layer{
+  name: "Leaky15"
+  type: "Leaky"
+  bottom: "conv15"
+  top: "Leaky15"
+}
+layer{
+  name: "conv16"
+  type: "Convolution"
+  bottom: "Leaky15"
+  top: "conv16"
+  convolution_param{
+    num_output: 1024
+    kernel_size: 3
+    stride: 1
+    pad: 1
+  }
+}
+layer{
+  name: "Leaky16"
+  type: "Leaky"
+  bottom: "conv16"
+  top: "Leaky16"
+}
+layer{
+  name: "pool4"
+  type: "Pooling"
+  bottom: "Leaky16"
+  top: "pool4"
+  pooling_param {
+    pool: MAX
+    kernel_size: 2
+    stride: 2
+  }
+}
+layer{
+  name: "conv17"
+  type: "Convolution"
+  bottom: "pool4"
+  top: "conv17"
+  convolution_param{
+    num_output: 512
+    kernel_size: 1
+    stride: 1
+    pad: 0
+  }
+}
+layer{
+  name: "Leaky17"
+  type: "Leaky"
+  bottom: "conv17"
+  top: "Leaky17"
+}
+layer{
+  name: "conv18"
+  type: "Convolution"
+  bottom: "Leaky17"
+  top: "conv18"
+  convolution_param{
+    num_output: 1024
+    kernel_size: 3
+    stride: 1
+    pad: 1
+  }
+}
+layer{
+  name: "Leaky18"
+  type: "Leaky"
+  bottom: "conv18"
+  top: "Leaky18"
+}
+layer{
+  name: "conv19"
+  type: "Convolution"
+  bottom: "Leaky18"
+  top: "conv19"
+  convolution_param{
+    num_output: 512
+    kernel_size: 1
+    stride: 1
+    pad: 0
+  }
+}
+layer{
+  name: "Leaky19"
+  type: "Leaky"
+  bottom: "conv19"
+  top: "Leaky19"
+}
+layer{
+  name: "conv20"
+  type: "Convolution"
+  bottom: "Leaky19"
+  top: "conv20"
+  convolution_param{
+    num_output: 1024
+    kernel_size: 3
+    stride: 1
+    pad: 1
+  }
+}
+layer{
+  name: "Leaky20"
+  type: "Leaky"
+  bottom: "conv20"
+  top: "Leaky20"
+}
+layer{
+  name: "conv21"
+  type: "Convolution"
+  bottom: "Leaky20"
+  top: "conv21"
+  convolution_param{
+    num_output: 1024
+    kernel_size: 3
+    stride: 1
+    pad: 1
+  }
+}
+layer{
+  name: "Leaky21"
+  type: "Leaky"
+  bottom: "conv21"
+  top: "Leaky21"
+}
+layer{
+  name: "conv22"
+  type: "Convolution"
+  bottom: "Leaky21"
+  top: "conv22"
+  convolution_param{
+    num_output: 1024
+    kernel_size: 3
+    stride: 2
+    pad: 1
+  }
+}
+layer{
+  name: "Leaky22"
+  type: "Leaky"
+  bottom: "conv22"
+  top: "Leaky22"
+}
+layer{
+  name: "conv23"
+  type: "Convolution"
+  bottom: "Leaky22"
+  top: "conv23"
+  convolution_param{
+    num_output: 1024
+    kernel_size: 3
+    stride: 1
+    pad: 1
+  }
+}
+layer{
+  name: "Leaky23"
+  type: "Leaky"
+  bottom: "conv23"
+  top: "Leaky23"
+}
+layer{
+  name: "conv24"
+  type: "Convolution"
+  bottom: "Leaky23"
+  top: "conv24"
+  convolution_param{
+    num_output: 1024
+    kernel_size: 3
+    stride: 1
+    pad: 1
+  }
+}
+layer{
+  name: "Leaky24"
+  type: "Leaky"
+  bottom: "conv24"
+  top: "Leaky24"
+}
+layer {
+  name: "connect1"
+  type: "InnerProduct"
+  bottom: "Leaky24"
+  top: "connect1"
+  inner_product_param {
+    num_output: 4096
+  }
+}
+layer{
+  name: "Leaky25"
+  type: "Leaky"
+  bottom: "connect1"
+  top: "Leaky25"
+}
+layer {
+  name: "connect2"
+  type: "InnerProduct"
+  bottom: "Leaky25"
+  top: "connect2"
+  inner_product_param {
+    num_output: 1470
+  }
+}
+#layer {
+#  name: "yolov1-output"
+#  type: "Yolov1Output"
+#  bottom: "connect2"
+#  top: "yolov1-output"
+#  include {
+#    phase: TEST
+#  }
+#  yolov1_output_param {
+#	num_classes: 20
+#    confidence_threshold: 0.2
+#	keep_top_k: 10
+#  }
+#}
