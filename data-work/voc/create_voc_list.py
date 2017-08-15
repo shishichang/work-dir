@@ -37,8 +37,13 @@ for i, filename in enumerate(find_files(anno_voc_train_dir)):
     name = filename.split('.')[0]
     img_file = '{}/vocImages/{}.jpg'.format(voc_dir, name)
     anno_file = '{}/vocAnnotations/trainval/{}.txt'.format(voc_dir, name)
-    assert os.path.exists(os.path.join(data_root, anno_file)) 
-    assert os.path.exists(os.path.join(data_root, img_file))
+    if not os.path.exists(os.path.join(data_root, anno_file)):
+        print(anno_file, 'not exist.')
+        continue
+
+    if not os.path.exists(os.path.join(data_root, img_file)):
+        print(img_file, 'not exist')
+        continue
     img_files.append(img_file)
     anno_files.append(anno_file)
 
